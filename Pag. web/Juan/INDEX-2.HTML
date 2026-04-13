@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal educativo TOPRA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo-area">
+            <img src="img\LOGO CIRCULAR.svg" alt="Logo Hospital" class="logo-img" onerror="this.style.display='none'">
+            <div class="logo-img-placeholder">LOGO</div>
+            <div class="logo-text">
+                <h1>PORTAL EDUCATIVO <span>TOPRA</span></h1>
+                <p class="logo-subtitle">E.S.E. Hospital Universitario Julio Méndez Barreneche</p>
+            </div>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li>
+                    <a href="#" class="nav-link active" data-target="inicio">Inicio</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="videoNav" aria-expanded="false">
+                        Videos <i class="fa fa-chevron-down chevron-icon"></i>
+                    </a>
+                    <div class="dropdown-content" id="videoDropdown">
+                        <a href="#" class="nav-link dropdown-item" data-target="videos" data-filter="inventario">Modulo Inventario</a>
+                        <a href="#" class="nav-link dropdown-item" data-target="videos" data-filter="mantenimiento">Modulo Mantenimiento</a>
+                        <a href="#" class="nav-link dropdown-item" data-target="videos" data-filter="insumos">Modulo Insumos</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" data-target="errores">Solucion de Errores</a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link" data-target="contacto">Contacto</a>
+                </li>
+            </ul>
+            <div class="search-bar-mobile">
+                <i class="fa fa-search"></i>
+                <input type="text" id="searchInputMobile" placeholder="Buscar tutorial...">
+            </div>
+        </nav>
+
+        <div class="header-actions">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Buscar tutorial...">
+                <button class="search-btn" aria-label="Buscar"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <section id="inicio" class="content-section active">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h2>Domina TOPRA</h2>
+                <p class="hero-sub">Tu guia completa de uso y soluciones para el sistema de gestion hospitalaria.</p>
+                <div class="hero-btns">
+                    <button class="btn-hero btn-explore nav-link" data-target="videos">Explorar Videos</button>
+                    <button class="btn-hero btn-report nav-link" data-target="errores">Reportar Error</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modules-preview">
+            <div class="module-card" onclick="showSection('videos','inventario')">
+                <div class="module-icon"><i class="fa fa-boxes"></i></div>
+                <h4>Inventario</h4>
+                <p>Registro y control de activos hospitalarios</p>
+            </div>
+            <div class="module-card" onclick="showSection('videos','mantenimiento')">
+                <div class="module-icon"><i class="fa fa-tools"></i></div>
+                <h4>Mantenimiento</h4>
+                <p>Programacion y reportes tecnicos preventivos</p>
+            </div>
+            <div class="module-card" onclick="showSection('videos','insumos')">
+                <div class="module-icon"><i class="fa fa-pills"></i></div>
+                <h4>Insumos</h4>
+                <p>Control de stock y salidas seguras</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos" class="content-section">
+        <div class="main-content">
+            <div class="section-header">
+                <h3 class="section-title">Biblioteca de Video Tutoriales</h3>
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="inventario">Inventario</button>
+                    <button class="filter-btn" data-filter="mantenimiento">Mantenimiento</button>
+                    <button class="filter-btn" data-filter="insumos">Insumos</button>
+                </div>
+            </div>
+
+            <!--
+                COMO AGREGAR VIDEOS:
+                1. Copia un bloque .video-card completo.
+                2. En data-youtube-id escribe el ID del video de YouTube.
+                   Ejemplo: https://youtu.be/dQw4w9WgXcQ -> ID = dQw4w9WgXcQ
+                3. Actualiza data-title, h4, p, .badge y .duration.
+                4. En data-category escribe: inventario, mantenimiento o insumos.
+                5. La miniatura se carga automaticamente desde YouTube si dejas src="" vacio.
+            -->
+
+            <div class="video-grid" id="videoGrid">
+
+                <!-- TARJETA 1: INVENTARIO -->
+                <div class="video-card" data-category="inventario" data-youtube-id="N8rOiWo9Y8k" data-title="Registro de Inventario">
+                    <div class="video-thumbnail">
+                        <img class="thumb-img" src="" alt="Registro de Inventario" data-youtube-id="N8rOiWo9Y8k">
+                        <span class="duration">1:33:55</span>
+                        <div class="play-overlay"><i class="fa fa-play-circle"></i></div>
+                        <iframe class="hover-preview" frameborder="0" allow="autoplay" tabindex="-1" aria-hidden="true"></iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="badge badge-inventario">Inventario</span>
+                        <h4>Registro de Inventario</h4>
+                        <p>Guia paso a paso para el registro computarizado de activos.</p>
+                    </div>
+                </div>
+
+                <!-- TARJETA 2: MANTENIMIENTO -->
+                <div class="video-card" data-category="mantenimiento" data-youtube-id="acW9RP8AbGc" data-title="Gestion de Mantenimiento">
+                    <div class="video-thumbnail">
+                        <img class="thumb-img" src="" alt="Gestion de Mantenimiento" data-youtube-id="acW9RP8AbGc">
+                        <span class="duration">5:15</span>
+                        <div class="play-overlay"><i class="fa fa-play-circle"></i></div>
+                        <iframe class="hover-preview" frameborder="0" allow="autoplay" tabindex="-1" aria-hidden="true"></iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="badge badge-mantenimiento">Mantenimiento</span>
+                        <h4>Gestion de Mantenimiento</h4>
+                        <p>Programacion de citas y reportes tecnicos preventivos.</p>
+                    </div>
+                </div>
+
+                <!-- TARJETA 3: INSUMOS -->
+                <div class="video-card" data-category="insumos" data-youtube-id="REEMPLAZA_CON_ID_VIDEO" data-title="Salida de Insumos">
+                    <div class="video-thumbnail">
+                        <img class="thumb-img" src="" alt="Salida de Insumos" data-youtube-id="REEMPLAZA_CON_ID_VIDEO">
+                        <span class="duration">3:45</span>
+                        <div class="play-overlay"><i class="fa fa-play-circle"></i></div>
+                        <iframe class="hover-preview" frameborder="0" allow="autoplay" tabindex="-1" aria-hidden="true"></iframe>
+                    </div>
+                    <div class="video-info">
+                        <span class="badge badge-insumos">Insumos</span>
+                        <h4>Salida de Insumos</h4>
+                        <p>Control de stock y base de datos de salidas seguras.</p>
+                    </div>
+                </div>
+
+                <!-- Agrega mas tarjetas aqui copiando el bloque anterior -->
+
+            </div>
+
+            <p class="no-results" id="noResults" style="display:none;">No se encontraron videos para tu busqueda.</p>
+        </div>
+    </section>
+
+    <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Reproductor de video">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Cerrar video">
+                <i class="fa fa-times"></i>
+            </button>
+            <h4 class="modal-title" id="modalTitle"></h4>
+            <div class="video-wrapper">
+                <iframe id="videoFrame" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- ERRORES  -->
+    <section id="errores" class="content-section">
+        <div class="main-content">
+            <h3 class="section-title">Solucion de Errores Comunes</h3>
+            <p class="section-desc">Encuentra soluciones rapidas a los problemas mas frecuentes en TOPRA.</p>
+
+            <div class="error-search">
+                <i class="fa fa-search"></i>
+                <input type="text" id="errorSearch" placeholder="Describe el error que tienes...">
+            </div>
+
+            <div class="accordion" id="errorAccordion">
+
+                <div class="accordion-item" data-keywords="login acceso contrasena sesion">
+                    <button class="accordion-btn">
+                        <span><i class="fa fa-lock err-icon"></i> No puedo iniciar sesion en TOPRA</span>
+                        <i class="fa fa-chevron-down acc-chevron"></i>
+                    </button>
+                    <div class="accordion-body">
+                        <ol>
+                            <li>Verifica que el <strong>usuario y contrasena</strong> esten escritos correctamente (distingue mayusculas).</li>
+                            <li>Asegurate de estar conectado a la <strong>red interna del hospital</strong>.</li>
+                            <li>Limpia el cache del navegador: <kbd>Ctrl + Shift + Del</kbd>.</li>
+                            <li>Si el problema persiste, contacta al area de <strong>Sistemas</strong> para restablecer tu contrasena.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="accordion-item" data-keywords="inventario registro guardar activo error">
+                    <button class="accordion-btn">
+                        <span><i class="fa fa-boxes err-icon"></i> El sistema no guarda el registro de inventario</span>
+                        <i class="fa fa-chevron-down acc-chevron"></i>
+                    </button>
+                    <div class="accordion-body">
+                        <ol>
+                            <li>Revisa que todos los <strong>campos obligatorios</strong> esten diligenciados (marcados con *).</li>
+                            <li>Verifica que el <strong>codigo del activo</strong> no este duplicado en el sistema.</li>
+                            <li>Confirma que tu usuario tenga los <strong>permisos de escritura</strong> habilitados.</li>
+                            <li>Intenta desde otro navegador (se recomienda Chrome o Edge actualizados).</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="accordion-item" data-keywords="mantenimiento orden programar fecha">
+                    <button class="accordion-btn">
+                        <span><i class="fa fa-tools err-icon"></i> No aparecen las ordenes de mantenimiento</span>
+                        <i class="fa fa-chevron-down acc-chevron"></i>
+                    </button>
+                    <div class="accordion-body">
+                        <ol>
+                            <li>Revisa el <strong>rango de fechas</strong> seleccionado en el filtro; amplialo si es necesario.</li>
+                            <li>Verifica que el <strong>estado del filtro</strong> no este limitando las ordenes (ej: "solo pendientes").</li>
+                            <li>Actualiza la pagina con <kbd>F5</kbd> o <kbd>Ctrl + R</kbd>.</li>
+                            <li>Si las ordenes fueron asignadas a otro tecnico, solicita acceso al administrador.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="accordion-item" data-keywords="insumos salida stock movimiento">
+                    <button class="accordion-btn">
+                        <span><i class="fa fa-pills err-icon"></i> Error al registrar salida de insumos</span>
+                        <i class="fa fa-chevron-down acc-chevron"></i>
+                    </button>
+                    <div class="accordion-body">
+                        <ol>
+                            <li>Confirma que el <strong>stock disponible</strong> sea mayor o igual a la cantidad a retirar.</li>
+                            <li>Verifica que el <strong>servicio destino</strong> este correctamente seleccionado.</li>
+                            <li>Asegurate de que el insumo no este marcado como <strong>"bloqueado"</strong> por vencimiento.</li>
+                            <li>Reporta el error con numero de lote al area de Sistemas si continua.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="accordion-item" data-keywords="lento carga demora rendimiento">
+                    <button class="accordion-btn">
+                        <span><i class="fa fa-tachometer-alt err-icon"></i> El sistema carga muy lento</span>
+                        <i class="fa fa-chevron-down acc-chevron"></i>
+                    </button>
+                    <div class="accordion-body">
+                        <ol>
+                            <li>Cierra otras pestanas y programas que no estes usando.</li>
+                            <li>Verifica la conexion de red o comunicate con el area de Sistemas.</li>
+                            <li>Limpia el cache del navegador: <kbd>Ctrl + Shift + Del</kbd>.</li>
+                            <li>Evita horas pico (7-8 AM y 12-1 PM) para tareas que consuman muchos datos.</li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="error-cta">
+                <p>No encontraste la solucion? Reporta tu incidencia directamente.</p>
+                <button class="btn-cta nav-link" data-target="contacto">Contactar Soporte</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO  -->
+    <section id="contacto" class="content-section">
+        <div class="main-content"> 
+            <h3 class="section-title">Contacto y Soporte</h3>
+            <p class="section-desc">Comunicate con el equipo de Sistemas del hospital para soporte tecnico en TOPRA.</p>
+
+            <div class="contact-grid">
+
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fa fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Ubicacion</h4>
+                            <p>Area de Sistemas - Bloque Administrativo<br> Hospital Julio Mendez Barreneche<br>Santa Marta, Magdalena</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fa fa-phone"></i></div>
+                        <div>
+                            <h4>Telefono interno</h4>
+                            <p>Extension: <strong>XXXX</strong></p>
+                            <p class="muted">Lun-Vie &middot; 7:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fa fa-envelope"></i></div>
+                        <div>
+                            <h4>Correo electronico</h4>
+                            <p><a href="mailto:sistemas@hospital.gov.co">sistemas@hospital.gov.co</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fa fa-clock"></i></div>
+                        <div>
+                            <h4>Horario de soporte</h4>
+                            <p>Lunes a Viernes: 7:00 AM - 5:00 PM</p>
+                            <p class="muted">Fuera de horario: solo fallas criticas del sistema</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrap">
+                    <h4>Reportar una incidencia</h4>
+                    <div id="formSuccess" class="form-success" style="display:none;">
+                        <i class="fa fa-check-circle"></i>
+                        <p>Tu reporte fue enviado. El equipo de Sistemas te respondera pronto.</p>
+                    </div>
+                    <div class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">Nombre completo *</label>
+                                <input type="text" id="nombre" placeholder="Tu nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="servicio">Servicio / Area *</label>
+                                <input type="text" id="servicio" placeholder="Ej: Urgencias, Farmacia">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo institucional *</label>
+                            <input type="email" id="correo" placeholder="usuario@hospital.gov.co">
+                        </div>
+                        <div class="form-group">
+                            <label for="modulo">Modulo afectado</label>
+                            <select id="modulo">
+                                <option value="">Selecciona un modulo</option>
+                                <option value="inventario">Inventario</option>
+                                <option value="mantenimiento">Mantenimiento</option>
+                                <option value="insumos">Insumos</option>
+                                <option value="acceso">Acceso / Login</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripcion del problema *</label>
+                            <textarea id="descripcion" rows="4" placeholder="Describe el error con el mayor detalle posible..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Prioridad</label>
+                            <div class="priority-options">
+                                <label class="priority-label">
+                                    <input type="radio" name="prioridad" value="baja" checked> Baja
+                                </label>
+                                <label class="priority-label">
+                                    <input type="radio" name="prioridad" value="media"> Media
+                                </label>
+                                <label class="priority-label priority-alta">
+                                    <input type="radio" name="prioridad" value="alta"> Alta - Sistema caido
+                                </label>
+                            </div>
+                        </div>
+                        <button class="btn-submit" id="submitBtn" onclick="submitForm()">Enviar Reporte</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER  -->
+    <footer class="main-footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <img src="img\LOGO HUJMB (1).svg" alt="Logo" onerror="this.style.display='none'">
+                <span>Portal TOPRA</span>
+            </div>
+            <p> E.S.E. Hospital Universitario Julio Méndez Barreneche </p>
+            <p class="footer-area">Area de Sistemas &amp; Gestion Tecnologica</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
