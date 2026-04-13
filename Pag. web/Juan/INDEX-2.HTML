@@ -8,21 +8,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
+ 
     <header class="main-header">
         <div class="logo-area">
             <img src="img\LOGO CIRCULAR.svg" alt="Logo Hospital" class="logo-img" onerror="this.style.display='none'">
             <div class="logo-img-placeholder">LOGO</div>
             <div class="logo-text">
                 <h1>PORTAL EDUCATIVO <span>TOPRA</span></h1>
-                <p class="logo-subtitle">E.S.E. Hospital Universitario Julio Méndez Barreneche</p>
+                <p class="logo-subtitle">Hospital Julio Mendez Barreneche</p>
             </div>
         </div>
-
+ 
         <button class="hamburger" id="hamburger" aria-label="Abrir menu">
             <span></span><span></span><span></span>
         </button>
-
+ 
         <nav class="main-nav" id="mainNav">
             <ul>
                 <li>
@@ -50,7 +50,7 @@
                 <input type="text" id="searchInputMobile" placeholder="Buscar tutorial...">
             </div>
         </nav>
-
+ 
         <div class="header-actions">
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Buscar tutorial...">
@@ -58,21 +58,24 @@
             </div>
         </div>
     </header>
-
+ 
     <div class="nav-overlay" id="navOverlay"></div>
-
+ 
     <section id="inicio" class="content-section active">
         <div class="hero-section">
             <div class="hero-content">
-                <h2>Domina TOPRA</h2>
-                <p class="hero-sub">Tu guia completa de uso y soluciones para el sistema de gestion hospitalaria.</p>
+                <h2>Domina TOPRA: Tu Guia<br>Diaria de Uso y Soluciones</h2>
+                <p class="hero-sub">Aprende, corrige y optimiza el flujo de trabajo en el sistema de gestion de cosas del hospital</p>
                 <div class="hero-btns">
                     <button class="btn-hero btn-explore nav-link" data-target="videos">Explorar Videos</button>
-                    <button class="btn-hero btn-report nav-link" data-target="errores">Reportar Error</button>
+                    <button class="btn-hero btn-report nav-link" data-target="errores">Reportar Error Comun</button>
                 </div>
             </div>
+            <div class="hero-media" id="heroMedia">
+                <img src="img\Gemini_Generated_Image_uv34f9uv34f9uv34.png" alt="Interfaz TOPRA" class="hero-img" onerror="this.closest('.hero-media').classList.add('no-img'); this.remove();">
+            </div>
         </div>
-
+ 
         <div class="modules-preview">
             <div class="module-card" onclick="showSection('videos','inventario')">
                 <div class="module-icon"><i class="fa fa-boxes"></i></div>
@@ -91,7 +94,7 @@
             </div>
         </div>
     </section>
-
+ 
     <section id="videos" class="content-section">
         <div class="main-content">
             <div class="section-header">
@@ -103,7 +106,7 @@
                     <button class="filter-btn" data-filter="insumos">Insumos</button>
                 </div>
             </div>
-
+ 
             <!--
                 COMO AGREGAR VIDEOS:
                 1. Copia un bloque .video-card completo.

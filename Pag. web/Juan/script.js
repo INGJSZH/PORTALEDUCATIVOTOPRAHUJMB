@@ -75,6 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainNav    = document.getElementById('mainNav');
     const navOverlay = document.getElementById('navOverlay');
 
+    const navCloseBtn = document.getElementById('navCloseBtn');
+
     function openMobileMenu() {
         hamburger.classList.add('open');
         mainNav.classList.add('open');
@@ -93,7 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
         mainNav.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
     });
 
+    navCloseBtn?.addEventListener('click', closeMobileMenu);
     navOverlay?.addEventListener('click', closeMobileMenu);
+
 
     // Calidad de miniatura a intentar en orden descendente
     const YT_THUMB_QUALITIES = ['maxresdefault', 'sddefault', 'hqdefault', 'mqdefault', 'default'];
